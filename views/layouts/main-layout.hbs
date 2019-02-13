@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ docTitle }}</title>
+
+    {{!-- dynamic css setup --}}
+    {{#if mainCSS }}
+        <link rel="stylesheet" href="/css/main.css">
+    {{/if }}
+    {{#if productCSS }}
+        <link rel="stylesheet" href="/css/product.css">
+    {{/if }}
+
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+
+                {{!-- inline if statement about class --}}
+                <li class="main-header__item"><a class="{{#if activeShop }}active{{/if}}" href="/">Shop</a></li>
+                <li class="main-header__item"><a class="{{#if activeAddProducts }}active{{/if}}" href="/admin/addProducts">Add Product</a></li>
+            
+            </ul>
+        </nav>
+    </header>
+    {{!-- 
+    
+        three curily braces here to get body
+        it is a part that dynamically changes from the sub.hbs
+
+     --}}
+    {{{ body }}}
+</body>
+</html>

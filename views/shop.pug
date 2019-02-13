@@ -1,0 +1,70 @@
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/main.css")
+
+block content
+    main
+        if products.length > 0
+            .grid
+                each product in products
+                    article.card.product-item
+                        header.card__header
+                            h1.product__title #{ product }
+                        .card__image
+                            img(src="http://ichef.bbci.co.uk/wwfeatures/live/624_351/images/live/p0/2v/dp/p02vdpfn.jpg" alt="books")
+                        .card__content
+                            h2.product__price $19.99
+                            p.product__description A very interesting book about so many even more interestin things!
+                        .card__actions
+                            button.btn Add To Cart
+        else
+            h1 No Products            
+
+
+//- <!DOCTYPE html>
+//- //- indentation is a big matter!!!!!!!!!!!!!!!
+//- //- header.main-header => .main-header : class
+//- //- a.active() => () : attributes
+
+
+//- html(lang="en")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-         meta(http-equiv="X-UA-Compatible", content="ie=edge")
+//-         //- docTitle is a field from res.render({ products, docTitle: 'Shop'});
+//-         //- The way of importing value from .js file
+//-         title #{ docTitle } 
+//-         link(rel="stylesheet", href="/css/main.css")
+//-     body
+//-         header.main-header
+//-             nav.main-header__nav
+//-                 ul.main-header__item-list
+//-                     li.main-header__item
+//-                         a.active(href="/") Shop
+//-                     li.main-header__item
+//-                         a(href="/admin/addProducts") Add Products
+//-         main
+//-             //- default is <div>
+//-             //- Therefore ".grid" is same as "div.grid"
+//-             //- when we have multiple classes, we can separate them with "."
+
+//-             //- Looping "each product in products"
+//-             //-     indentation is required to loop the value inside.
+
+//-             if products.length > 0
+//-                 .grid
+//-                     each product in products
+//-                         article.card.product-item
+//-                             header.card__header
+//-                                 h1.product__title #{ product }
+//-                             .card__image
+//-                                 img(src="http://ichef.bbci.co.uk/wwfeatures/live/624_351/images/live/p0/2v/dp/p02vdpfn.jpg" alt="books")
+//-                             .card__content
+//-                                 h2.product__price $19.99
+//-                                 p.product__description A very interesting book about so many even more interestin things!
+//-                             .card__actions
+//-                                 button.btn Add To Cart
+//-             else
+//-                 h1 No Products            
